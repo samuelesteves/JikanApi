@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Search", "Anime", FormMethod.Post))
+{
+    <form>
+    <input type="text" name="searchQuery" placeholder="Digite aqui..." />
+    <input type="submit" value="Pesquisar" />
+    </form>
+}

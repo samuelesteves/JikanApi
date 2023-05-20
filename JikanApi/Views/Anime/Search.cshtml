@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+@model List<JikanDotNet.Anime>
+
+<style>
+
+    body {
+        background-color: #333333;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header {
+        background-color: blue;
+        color: white;
+        padding: 20px;
+    }
+
+    .anime-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .anime-item {
+        flex-basis: 30%;
+        margin-bottom: 20px;
+    }
+
+        .anime-item img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .anime-item p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+</style>
+
+<div class="header">
+    <h1>Resultados para a pesquisa</h1>
+</div>
+
+<div class="anime-grid">
+        @foreach (var anime in Model)
+        {
+            <div class="anime-item">
+                <img src="@anime.Images.WebP.ImageUrl" alt="Imagem" />
+                <p>@anime.TitleEnglish</p>
+            </div>
+        }
+</div>
