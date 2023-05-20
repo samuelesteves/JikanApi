@@ -1,5 +1,6 @@
 ﻿using JikanDotNet;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace JikanApi.Controllers
 {
@@ -8,18 +9,11 @@ namespace JikanApi.Controllers
 
         IJikan jikan = new Jikan();
 
-        public async Task<IActionResult> Index()
-        {
-            return View();
-        }
-
         public async Task<IActionResult> Search(string searchQuery)
         {
-
             var buscaAnime = await jikan.SearchAnimeAsync(searchQuery);
 
             return View("Search", buscaAnime.Data);
         }
     }
 }
-
