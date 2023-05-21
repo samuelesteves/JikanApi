@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\CSSAnime\styleAnime.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JikanDotNet" Version="2.6.0" />
   </ItemGroup>
 
